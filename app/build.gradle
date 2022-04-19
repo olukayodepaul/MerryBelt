@@ -1,0 +1,109 @@
+import dependencies.AnnotationProcessing
+import dependencies.Build
+import dependencies.Dependencies
+import dependencies.SupportDependencies
+
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.mobile.merrybelt"
+        minSdkVersion 24
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures{
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    //Support Dependencies
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation SupportDependencies.isSupportAndroidxAppCompact
+    implementation SupportDependencies.isSupportGoogleMaterialDesign
+    implementation SupportDependencies.isSupportAndroidxConstraintLayout
+    implementation SupportDependencies.isSupportAndroidxConstraintLayout
+    implementation SupportDependencies.recycler_view
+    implementation SupportDependencies.glides
+    kapt SupportDependencies.glide_github
+    implementation SupportDependencies.sharePrefence
+    implementation SupportDependencies.materialDialog
+
+    // Kotlin
+    implementation Dependencies.kotlin_standard_library
+    implementation Dependencies.kotlin_reflect
+    implementation Dependencies.isKtx
+
+    //Hilt Component
+    implementation Dependencies.hilt_dagger
+    kapt AnnotationProcessing.hilt_compiler
+    implementation Dependencies.hilt_viewModel
+    kapt Dependencies.hilt_viewModel_kapt
+
+    //Coroutines
+    implementation Dependencies.kotlin_coroutines
+    implementation Dependencies.kotlin_coroutines_android
+
+    //Notification Badge
+    implementation Dependencies.notificationBadge
+
+    // Lifecycle components
+    implementation Dependencies.lifecycle_common
+    implementation Dependencies.lifecycle_liveData
+    implementation Dependencies.lifecycleViewModel
+    implementation Dependencies.life_cycle_extension
+    implementation Dependencies.lifecycle_runtime
+    kapt AnnotationProcessing.lifecycle_compiler
+
+    //google location service
+    //implementation Build.google_services
+
+    //GOOGLE location service
+    //implementation Dependencies.googlelocationservice
+
+    // -- Retrofit3 for Network Call
+    implementation Dependencies.retrofit2
+    implementation Dependencies.retrofit_gson
+    implementation Dependencies.okhttp3
+    implementation Dependencies.okhttplogging
+
+    //Swipe Indicator
+    implementation Dependencies.swipeViewPager
+    implementation Dependencies.circleIndicator
+
+    //Test Dependencies
+    testImplementation SupportDependencies.isSupportJUnitTesting
+    androidTestImplementation SupportDependencies.isSupportExtensionTesting
+    androidTestImplementation SupportDependencies.isSupportEspressoTesting
+
+}
