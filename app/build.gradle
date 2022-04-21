@@ -1,5 +1,4 @@
 import dependencies.AnnotationProcessing
-import dependencies.Build
 import dependencies.Dependencies
 import dependencies.SupportDependencies
 
@@ -26,6 +25,14 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    kotlinOptions {
+        jvmTarget = "1.8"
+        freeCompilerArgs += [
+                "-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi",
+                "-Xuse-experimental=kotlinx.coroutines.TheAnnotationYouWantToDisable"
+        ]
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -43,6 +50,8 @@ android {
     buildFeatures{
         viewBinding true
     }
+
+
 }
 
 dependencies {
@@ -84,6 +93,7 @@ dependencies {
     implementation Dependencies.life_cycle_extension
     implementation Dependencies.lifecycle_runtime
     kapt AnnotationProcessing.lifecycle_compiler
+    implementation Dependencies.androidxActivity
 
     //google location service
     //implementation Build.google_services
@@ -105,5 +115,7 @@ dependencies {
     testImplementation SupportDependencies.isSupportJUnitTesting
     androidTestImplementation SupportDependencies.isSupportExtensionTesting
     androidTestImplementation SupportDependencies.isSupportEspressoTesting
+
+
 
 }

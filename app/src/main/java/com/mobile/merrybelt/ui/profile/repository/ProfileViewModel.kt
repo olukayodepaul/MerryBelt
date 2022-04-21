@@ -4,17 +4,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 
 
-class ProfileViewModel
+class ProfileViewModel @ViewModelInject constructor(private val profileRepo: ProfileRepo) : ViewModel() {
 
 
-
-
-
-
-
-
-
-
-//@ViewModelInject constructor(private val profileRepo: ProfileRepo) : ViewModel() {
-//
-//}
+}

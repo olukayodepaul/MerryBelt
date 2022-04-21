@@ -15,7 +15,7 @@ object Versions {
     const val hilt_lifecycle_viewmodel = "1.0.0-alpha01"
     const val kotlin = "1.4.32"
     const val ktx = "1.2.0"
-
+    const val androidxActivity = "1.3.1"
     const val coroutineVersion = "1.3.9"
     const val badge = "1.0.4"
     const val lifecycle_version = "2.2.0-alpha03"

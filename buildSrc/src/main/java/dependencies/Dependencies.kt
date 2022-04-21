@@ -12,7 +12,7 @@ object Dependencies {
     //Kotlin Standard Library
     const val kotlin_standard_library = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val kotlin_reflect = "org.jetbrains.kotlin:kotlin-reflect:${Versions.kotlin}"
-    val isKtx = "androidx.core:core-ktx:${Versions.ktx}"
+    const val isKtx = "androidx.core:core-ktx:${Versions.ktx}"
 
     //Coroutines Component
     const val kotlin_coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutineVersion}"
@@ -27,6 +27,7 @@ object Dependencies {
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle_version}"
     const val lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime:${Versions.lifecycle_version}"
     const val life_cycle_extension = "androidx.lifecycle:lifecycle-extensions:${Versions.life_cycle_extension_version}"
+    const val androidxActivity = "androidx.activity:activity-ktx:${Versions.androidxActivity}"
 
     //google current location serveice
     const val googlelocationservice = "com.google.android.gms:play-services-location:${Versions.locationservice}"
