@@ -14,7 +14,11 @@ interface RetrofitServices {
   @POST("/resd/network-mgt")
     suspend fun account(
       @Header("terminalId") terminalId: String,
+      //@Header("Authorization") auth: String,
       @Body data: IsNetworkMSG
   ): IsNetworkMSGCallBack
+
+    //passing the data. this is for specific endpoint
+    //account("terminalId", "Bearer "+token, bodyData);
 
 }

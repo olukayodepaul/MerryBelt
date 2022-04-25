@@ -36,7 +36,6 @@ object RetrofitModule {
             .followSslRedirects(true)
             .addInterceptor(supportInterceptor)
 
-
         if (BuildConfig.DEBUG) {
             val logging = HttpLoggingInterceptor()
             logging.level = HttpLoggingInterceptor.Level.BODY
